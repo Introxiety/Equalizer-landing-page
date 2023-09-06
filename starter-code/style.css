@@ -19,8 +19,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -59,9 +59,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -72,121 +72,237 @@ select {
   }
 }
 
-body{
-    font-family: 'IBM Plex Sans', sans-serif;
-    
-    background-image: url(assets/bg-main-mobile.png);
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: top;
- 
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+
+  background-image: url(assets/bg-main-mobile.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
-.grid{
-    display: grid;
+.grid {
+  display: grid;
 }
 
-.x-center{
-    justify-content: center;
+.x-center {
+  justify-content: center;
 }
 
-.y-center{
-    align-items: center;
+.y-center {
+  align-items: center;
 }
 
-.bg-pattern-1{
-    display: none;
+.bg-pattern-1 {
+  display: none;
 }
 
-.gap-m{
-    gap: 3rem;
+.gap-m {
+  gap: 3rem;
 }
 
-.gap-s{
-    gap: 1rem;
+.gap-s {
+  gap: 1rem;
 }
 
-header h1{
-   font-size: 2.5rem;
-   line-height: 1.2;
+header h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
 
-header{
-    padding: 1.2rem;
+header {
+  padding: 1.2rem;
 }
 
-main{
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: .3fr .9fr .1fr .1fr 1fr;
+main {
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 0.3fr 0.9fr 0.1fr 0.1fr 1fr;
 }
 
-.phone-img{
-    z-index: 2;
-    grid-area: 1/2/3/3;
+.price-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.bg-pattern-2{
-    z-index: 1;
-    grid-area: 2/1/5/4;
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    background-image: url(assets/bg-pattern-2.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:contain;
-    border-radius: 1em;
-    
+.phone-img {
+  z-index: 2;
+  grid-area: 1/2/3/3;
 }
 
-main section{
-    grid-area: 4/1/6/4;
-    z-index: 3;
-    background-color: #FA7453;
-    padding: 2.5rem 2rem;
-    height: 100%;
-    color: white;
-    border-radius: 1em;
+.bg-pattern-2 {
+  z-index: 1;
+  grid-area: 2/1/5/4;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/bg-pattern-2.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 1em;
 }
 
-section a{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    text-decoration: none;
-    padding: 1em 0;
-    border-radius: .5em;
+main section {
+  grid-area: 4/1/6/4;
+  z-index: 3;
+  background-color: #fa7453;
+  padding: 2.5rem 2rem;
+  height: 100%;
+  color: white;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
 }
 
-.font-l{
-    font-size: 3rem;
+section a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 1em 0;
+  border-radius: 1em;
 }
 
-
-section a:nth-of-type(1){
-    color: white;
-    background-color:black ;
+.btn-container{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
 
-section a:nth-of-type(2){
-    color: black;
-    background-color:white ;
+.font-l {
+  font-size: 3rem;
 }
 
-footer{
-    padding:1rem 2rem;
-    gap: 1rem;
+section a:nth-of-type(1) {
+  color: white;
+  background-color: black;
 }
 
-ul{
-    display: flex;
-    gap: 1rem;
+section a:nth-of-type(2) {
+  color: black;
+  background-color: white;
+}
+
+footer {
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 3rem;
+}
+
+li {
+  list-style: none;
+}
+
+@media (min-width: 48em) {
+  header h1 {
+    font-size: 4rem;
+  }
+  header {
+    grid-template-columns: 3fr 1.5fr;
+    grid-template-areas:
+      "logo picture"
+      "intro picture";
     padding: 0;
-    margin-top: 3rem;
-}
+  }
 
-li{
-    list-style: none;;
+  .gap-m {
+    gap: 2;
+  }
+  .bg-pattern-1 {
+    display: block;
+    grid-area: picture;
+    height: 100%;
+    background-image: url(assets/bg-pattern-1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .info-container {
+    grid-area: intro;
+    padding: 2rem 0 0 3rem;
+  }
+  nav {
+    grid-area: logo;
+    padding: 2rem 0 0 3rem;
+  }
+  header p {
+    font-size: 1.125rem;
+  }
+
+  /* Section 2 */
+
+  main {
+    grid-template-columns: 0.3fr 0.9fr 0.4fr 0.5fr 1fr 0.3fr;
+    grid-template-rows: 0.5fr 0.8fr 1fr 1fr 0.4fr;
+  }
+  .phone-img {
+    grid-area: 1/2/4/4;
+  }
+
+  .bg-pattern-2 {
+    grid-area: 2/1/5/7;
+    background-position: top;
+    background-size: auto;
+  }
+  main section {
+    grid-area: 3/3/7/6;
+    padding: 3rem;
+  }
+
+  main h2{
+    font-size: 2rem;
+  }
+
+  .gap-s{
+    gap: .2rem;
+  }
+  main section p{
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    line-height: 2;
+  }
+
+  .font-l{
+    font-size: 4.0625rem;
+    font-weight: 700;
+  }
+  main section a{
+    padding: 1.5rem 0;
+  }
+
+  /* FOOTER */
+  footer{
+    grid-template-columns: .6fr 1fr;
+    grid-template-areas: 
+    'logo logo'
+    'text social'
+    ;
+    align-items: center;
+    padding-bottom: 3rem;
+  }
+  footer img{
+    grid-area: logo;
+  }
+
+  footer p{
+    grid-area: text;
+  }
+
+  footer ul{
+    grid-area: social;
+    align-self: center;
+    margin-bottom: 3rem;
+    justify-self: flex-end;
+  }
+
 }

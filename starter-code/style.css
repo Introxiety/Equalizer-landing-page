@@ -404,6 +404,8 @@ li {
     ;
     align-items: center;
     padding-bottom: 3rem;
+    max-width: 69.375rem;
+    margin: 0 auto;
   }
 
   footer img{

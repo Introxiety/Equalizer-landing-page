@@ -74,11 +74,9 @@ select {
 
 body {
   font-family: "IBM Plex Sans", sans-serif;
-
   background-image: url(assets/bg-main-mobile.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
+  background-repeat: repeat;
+  background-position: top right;
 }
 
 .grid {
@@ -242,11 +240,9 @@ li {
   .bg-pattern-1 {
     display: block;
     grid-area: picture;
-    height: 100%;
-    background-image: url(assets/bg-pattern-1.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top right;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   .info-container {
     grid-area: intro;
@@ -329,15 +325,28 @@ li {
 }
 
 @media (min-width: 90em) {
+  nav{
+    padding: 0;
+  }
+
   header h1{
     font-size: 5.5rem;
   }
   header p{
     font-size: 1.25rem;
+    padding-right: 10rem;
   }
 
   header{
-    gap: 4rem;
+    gap: 10rem;
+    display: flex;
+    margin: 0 auto;
+    max-width: 69.375rem;
+    grid-template-columns: 1fr;
+
+  }
+  .info-container{
+    padding: 0;
   }
 
   .gap-s{
@@ -347,8 +356,11 @@ li {
   /* MAIN */
 
   main{
-    grid-template-columns: .3fr 1fr .5fr 1.25fr .3fr;
-    grid-template-rows: 0.5fr 0.8fr 1fr .5fr 0.4fr;
+    grid-template-columns: .3fr .925fr .4fr 1.35fr .3fr;
+    grid-template-rows: 0.1fr 0.350fr 1fr 1fr .5fr;
+    max-width: 69.375rem;
+    max-height: 52.2rem;
+    margin: 0 auto;
   }
   .phone-img {
     grid-area: 1/2/4/3;
